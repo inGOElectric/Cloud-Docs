@@ -1,0 +1,481 @@
+\documentclass[12pt,a4paper]{report}
+
+% Packages
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{amsmath}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+
+\onehalfspacing
+
+% Header & Footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Service Management System}
+\fancyhead[R]{Project Documentation}
+\fancyfoot[C]{\thepage}
+
+\begin{document}
+
+%---------------------------------------
+% Title Page
+%---------------------------------------
+
+\begin{titlepage}
+\centering
+
+\vspace*{2cm}
+
+{\Huge \textbf{Service Management System}}\\[0.5cm]
+{\Large Project Documentation}
+
+\vspace{2cm}
+
+\textbf{Author:} \\
+[0.3cm]
+Your Name
+
+\vspace{1cm}
+
+\textbf{Institution / Organization}
+
+\vspace{1cm}
+
+\textbf{Date:} \today
+
+\vfill
+
+\end{titlepage}
+
+%---------------------------------------
+% Table of Contents
+%---------------------------------------
+
+\pagenumbering{roman}
+\tableofcontents
+\newpage
+
+\pagenumbering{arabic}
+
+%---------------------------------------
+\chapter{Introduction}
+
+\section{Problem Description}
+
+Managing service operations manually presents several challenges such as inefficiencies in booking service appointments, tracking service jobs, and maintaining customer and vehicle records.
+
+\section{Existing System Analysis}
+
+Existing systems rely on manual processes which lead to:
+
+\begin{itemize}
+\item Lack of integration between departments
+\item Slow data retrieval
+\item Human errors in documentation
+\item Poor tracking of service history
+\end{itemize}
+
+\section{Project Scope}
+
+The Service Management System integrates:
+
+\begin{itemize}
+\item Backend APIs
+\item Frontend interface
+\item Database management
+\item Test ride management
+\item Role-based system access
+\end{itemize}
+
+\section{Objectives}
+
+\begin{itemize}
+\item Streamline service operations
+\item Implement role-based access control
+\item Enable efficient CRUD operations
+\item Manage test ride bookings and conversions
+\end{itemize}
+
+%---------------------------------------
+\chapter{Customer Differentiation}
+
+\section{New Customers}
+
+New customers are individuals registering in the system for the first time. The workflow includes:
+
+\begin{enumerate}
+\item Register customer personal details
+\item Register vehicle details
+\item Create service job cards
+\end{enumerate}
+
+\section{Existing Customers}
+
+Existing customers already have records stored in the system. Their workflow includes:
+
+\begin{enumerate}
+\item Retrieve customer profile
+\item Retrieve vehicle details
+\item Create new job cards or view service history
+\end{enumerate}
+
+\section{Test Ride Customers}
+
+Test ride customers are potential buyers visiting the showroom for vehicle trials.
+
+These customers may later convert into regular customers if they proceed with a purchase or service.
+
+%---------------------------------------
+\chapter{Test Ride Management}
+
+\section{Test Ride Booking}
+
+The system allows scheduling test rides by collecting:
+
+\begin{itemize}
+\item Customer details
+\item Vehicle preference
+\item Test ride date and time
+\end{itemize}
+
+\section{Feedback Collection}
+
+After the test ride, feedback is collected regarding:
+
+\begin{itemize}
+\item Vehicle performance
+\item Customer experience
+\item Purchase interest
+\end{itemize}
+
+\section{Follow-Up Process}
+
+The system enables follow-ups for customers who show interest after test rides.
+
+\section{Conversion to Regular Customer}
+
+Test ride customers can be converted into regular customers if they proceed with a purchase or service.
+
+%---------------------------------------
+\chapter{System Analysis}
+
+\section{Architecture Overview}
+
+The system follows a client-server architecture consisting of:
+
+\begin{itemize}
+\item Frontend interface built using React
+\item Backend APIs developed using Node.js and Express
+\item Database managed through Prisma ORM
+\end{itemize}
+
+\section{Functional Specifications}
+
+\subsection{User Stories}
+
+Example user story:
+
+\textit{As a service advisor, I want to create a job card so that I can track service details.}
+
+\subsection{Use Case Details}
+
+Main system use cases include:
+
+\begin{itemize}
+\item Create job card
+\item Manage customers
+\item Manage vehicles
+\item Schedule test rides
+\item Collect customer feedback
+\end{itemize}
+
+\section{System Requirements}
+
+\subsection{Functional Requirements}
+
+\begin{itemize}
+\item Role-based authentication
+\item CRUD operations
+\item Email notifications
+\item File uploads
+\item Test ride management
+\end{itemize}
+
+\subsection{Non-Functional Requirements}
+
+\begin{itemize}
+\item Security
+\item Scalability
+\item Reliability
+\end{itemize}
+
+%---------------------------------------
+\chapter{Role-Based Access Control}
+
+\section{Admin}
+
+Admin users can:
+
+\begin{itemize}
+\item Manage users
+\item View all job cards
+\item Manage test ride bookings
+\item Access reports and analytics
+\end{itemize}
+
+\section{Service Advisor}
+
+Service advisors can:
+
+\begin{itemize}
+\item Register customers
+\item Create job cards
+\item Schedule test rides
+\end{itemize}
+
+\section{Technician}
+
+Technicians can:
+
+\begin{itemize}
+\item View assigned job cards
+\item Update service status
+\end{itemize}
+
+\section{Customer}
+
+Customers can:
+
+\begin{itemize}
+\item Book test rides
+\item Provide feedback
+\item Track service status
+\end{itemize}
+
+%---------------------------------------
+\chapter{System Design}
+
+\section{Architecture Design}
+
+The system architecture consists of three main layers:
+
+\begin{itemize}
+\item Frontend Layer
+\item Backend API Layer
+\item Database Layer
+\end{itemize}
+
+\section{Data Flow Diagram}
+
+The data flow diagram illustrates communication between the user interface, backend services, and database.
+
+\section{Database Schema}
+
+Main database entities include:
+
+\begin{itemize}
+\item Customers
+\item Vehicles
+\item Job Cards
+\item Service Records
+\item Test Rides
+\end{itemize}
+
+\subsection{Test Ride Table}
+
+The \texttt{test\_rides} table stores:
+
+\begin{itemize}
+\item Booking ID
+\item Customer details
+\item Vehicle preference
+\item Test ride schedule
+\item Feedback
+\item Conversion status
+\end{itemize}
+
+%---------------------------------------
+\chapter{Implementation}
+
+\section{Technology Stack}
+
+\begin{itemize}
+\item Backend: Node.js, Express, Prisma ORM
+\item Frontend: React, Vite, TailwindCSS
+\item Database: SQL-based cloud database
+\end{itemize}
+
+\section{Key Features}
+
+\subsection{CRUD Operations}
+
+Create, update, read, and delete operations for customers, vehicles, and job cards.
+
+\subsection{Role-Based Access}
+
+Admin and staff roles control system access.
+
+\subsection{Email Notifications}
+
+Automated notifications for service updates and bookings.
+
+\subsection{File Uploads}
+
+Support for uploading service-related files.
+
+\section{Admin Dashboard Features}
+
+The admin dashboard includes:
+
+\begin{itemize}
+\item Job card management
+\item Test ride booking management
+\item Customer management
+\item Service status tracking
+\end{itemize}
+
+Example dashboard table columns:
+
+\textbf{Job Cards Table}
+
+\begin{itemize}
+\item Job Card ID
+\item Customer Name
+\item Vehicle Model
+\item Service Type
+\item Status
+\item Actions
+\end{itemize}
+
+\textbf{Test Ride Table}
+
+\begin{itemize}
+\item Booking ID
+\item Customer Name
+\item Vehicle Preference
+\item Test Ride Date
+\item Feedback
+\item Status
+\item Actions
+\end{itemize}
+
+\section{Color-Coded Statuses}
+
+The system uses color-coded statuses:
+
+\textbf{Job Cards}
+
+\begin{itemize}
+\item Open -- Yellow
+\item In Progress -- Blue
+\item Completed -- Green
+\end{itemize}
+
+\textbf{Test Rides}
+
+\begin{itemize}
+\item Scheduled -- Blue
+\item Completed -- Green
+\item Cancelled -- Red
+\end{itemize}
+
+%---------------------------------------
+\chapter{Testing}
+
+\section{Testing Strategy}
+
+\subsection{Unit Testing}
+
+Testing of individual modules.
+
+\subsection{Integration Testing}
+
+Ensures interaction between frontend and backend.
+
+\subsection{System Testing}
+
+Full system functionality testing.
+
+\section{Test Reports}
+
+Performance metrics and bug reports are documented.
+
+%---------------------------------------
+\chapter{Deployment}
+
+\section{Deployment Architecture}
+
+The application is deployed on cloud infrastructure where frontend, backend, and database operate on separate services.
+
+\section{Deployment Checklist}
+
+\subsection{Pre-Deployment}
+
+\begin{itemize}
+\item Configure environment variables
+\item Run database migrations
+\item Seed database
+\end{itemize}
+
+\subsection{Post-Deployment}
+
+\begin{itemize}
+\item Verify APIs
+\item Test authentication
+\item Monitor system logs
+\end{itemize}
+
+%---------------------------------------
+\chapter{User Guides}
+
+\section{Admin Dashboard Quick Start}
+
+\begin{enumerate}
+\item Login to the system
+\item Navigate to dashboard
+\item Create job cards or test ride bookings
+\item Monitor service operations
+\end{enumerate}
+
+\section{FAQ}
+
+\textbf{Q: How do I differentiate between new and existing customers?}
+
+New customers must be registered first, while existing customers can be retrieved from stored records.
+
+\textbf{Q: How can I schedule a test ride booking?}
+
+Navigate to the Test Ride section in the dashboard and schedule the booking.
+
+\textbf{Q: How can a test ride customer be converted to a regular customer?}
+
+Use the conversion option available in the Test Ride Management section.
+
+%---------------------------------------
+\chapter{Conclusion}
+
+\section{Future Enhancements}
+
+\begin{itemize}
+\item Automated follow-ups for test ride customers
+\item Analytics for test ride conversions
+\item Advanced reporting dashboards
+\item System scalability improvements
+\end{itemize}
+
+\section{Lessons Learned}
+
+This project provided experience in full-stack development, system architecture design, API integration, and database management.
+
+\chapter{References}
+
+\begin{itemize}
+\item Node.js Documentation
+\item Prisma Documentation
+\item React Documentation
+\item TailwindCSS Documentation
+\end{itemize}
+
+\end{document}

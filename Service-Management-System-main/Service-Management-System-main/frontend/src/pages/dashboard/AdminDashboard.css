@@ -1,0 +1,172 @@
+/* =========================
+   ROOT VARIABLES
+========================= */
+:root {
+  --slate-50: #f8fafc;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-900: #0f172a;
+  --blue-600: #2563eb;
+}
+
+/* =========================
+   PAGE
+========================= */
+.page-bg {
+  background-color: var(--blue-theme);
+  min-height: 100vh;
+}
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+/* =========================
+   HEADER
+========================= */
+.page-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--slate-900);
+}
+
+.page-subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin-top: 6px;
+}
+
+.create-link {
+  margin-top: 12px;
+  display: inline-block;
+  font-size: 14px;
+  color: var(--blue-600);
+  text-decoration: none;
+}
+
+.create-link:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   FILTERS
+========================= */
+.filters {
+  margin-top: 28px;
+  margin-bottom: 28px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 18px;
+}
+
+label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--slate-700);
+  margin-bottom: 6px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+}
+
+/* =========================
+   TABLE
+========================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  font-size: 14px;
+}
+
+thead {
+  background-color: var(--slate-100);
+}
+
+th {
+  padding: 12px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--slate-700);
+}
+
+td {
+  padding: 14px 12px;
+  border-bottom: 1px solid #e5e7eb;
+  color: var(--slate-600);
+}
+
+tbody tr:hover {
+  background-color: var(--slate-50);
+}
+
+/* =========================
+   STATUS
+========================= */
+.status {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  display: inline-block;
+}
+
+/* =========================
+   ACTIONS (IMPORTANT PART)
+========================= */
+.actions {
+  display: flex;
+  gap: 18px;            /* spacing like FIRST image */
+  white-space: nowrap;
+}
+
+.action-link {
+  font-size: 13px;
+  color: var(--blue-600);
+  text-decoration: none;
+}
+
+.action-link:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.results {
+  margin-top: 14px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  .filters {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    gap: 12px;
+  }
+}

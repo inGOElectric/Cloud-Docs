@@ -1,0 +1,40 @@
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.media-card {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 8px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.media-card img,
+.media-card video {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.media-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-top: 6px;
+  color: #555;
+}
+
+.media-context {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.empty-media {
+  color: #777;
+  margin-top: 12px;
+}

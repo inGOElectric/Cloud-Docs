@@ -1,0 +1,9 @@
+import express from "express";
+import { createServiceBooking } from "../controllers/serviceBookingController.js";
+
+const router = express.Router();
+
+// ✅ PUBLIC (NO AUTH)
+router.post("/", createServiceBooking);
+
+export default router;

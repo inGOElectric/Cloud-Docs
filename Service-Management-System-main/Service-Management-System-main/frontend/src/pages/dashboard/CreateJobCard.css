@@ -1,0 +1,152 @@
+/* ===============================
+   CREATE JOB CARD - LAYOUT FIX
+=============================== */
+
+.jobcard-form-wrapper {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* TABLE */
+.jobcard-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+/* CELLS */
+.jobcard-table td {
+  width: 25%;
+  padding: 10px;
+  vertical-align: top;
+}
+
+/* INPUTS (ONLY TEXT FIELDS, NOT RADIO) */
+.jobcard-table input[type="text"],
+.jobcard-table input[type="number"],
+.jobcard-table input[type="date"],
+.jobcard-table input[type="datetime-local"],
+.jobcard-table select,
+.jobcard-table textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+/* TEXTAREA */
+.jobcard-table textarea {
+  min-height: 60px;
+  resize: vertical;
+}
+
+/* SECTION HEADINGS */
+.jobcard-form-wrapper h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #01263B;
+}
+
+/* BUTTONS */
+.jobcard-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.jobcard-actions button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.jobcard-actions button:first-child {
+  background: #e5e7eb;
+}
+
+.admin-button-primary {
+  background: #01263B;
+  color: white;
+}
+
+/* ===============================
+   CHECKLIST FIX
+=============================== */
+
+/* hide labels on desktop */
+.checklist-option-label {
+  display: none;
+}
+
+/* radio alignment */
+.checklist-option {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  width: 100%;
+}
+
+/* prevent radio stretching */
+.checklist-option input {
+  width: auto !important;
+  margin: 0;
+}
+
+/* ===============================
+   MOBILE FIX
+=============================== */
+
+@media (max-width: 768px) {
+
+  /* TABLE → BLOCK */
+  .jobcard-table,
+  .jobcard-table tbody,
+  .jobcard-table tr,
+  .jobcard-table td {
+    display: block;
+    width: 100% !important;
+  }
+
+  .jobcard-table tr {
+    margin-bottom: 12px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  /* CHECKLIST TABLE */
+  .checklist-table thead {
+    display: none;
+  }
+
+  .checklist-table tr {
+    margin-bottom: 16px;
+    padding: 12px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+  }
+
+  .checklist-table td {
+    border: none;
+    padding: 6px 0;
+    text-align: left !important;
+  }
+
+  .checklist-table td:first-child {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #01263B;
+  }
+
+  /* SHOW LABELS ON MOBILE */
+  .checklist-option-label {
+    display: inline;
+    font-size: 14px;
+    color: #111827;
+  }
+}
